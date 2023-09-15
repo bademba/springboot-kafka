@@ -21,6 +21,6 @@ public class MessageController {
     @GetMapping("/publish")
     public ResponseEntity<String> publish(@RequestParam("message") String message){
         kafkaProducer.sendMessage(message);
-        return ResponseEntity.ok("{\"status\":\"message sent\"}");
+        return ResponseEntity.ok("{\"status\":\"message sent to the topic\"}");
     }
 }
